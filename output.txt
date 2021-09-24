@@ -1,0 +1,12 @@
+PS C:\Users\Justin\Documents\VSCode\ASCII_art> & C:/Users/Justin/AppData/Local/Microsoft/WindowsApps/python3.9.exe c:/Users/Justin/Documents/VSCode/ASCII_art/print_ascii_text.py
+['I', ' ', 'L', 'O', 'V', 'E', ' ', 'Y', 'O', 'U']
+[56, 182, 77, 98, 147, 28, 182, 168, 98, 140]
+
+PRINTING
+
+ III     L      OOO  V   V EEEEE    Y   Y  OOO  U   U 
+  I      L     O   O V   V E        Y   Y O   O U   U 
+  I      L     O   O V   V EEEEE     Y Y  O   O U   U 
+  I      L     O   O V   V E          Y   O   O U   U 
+  I      L     O   O  V V  E          Y   O   O U   U 
+ III     LLLLL  OOO    V   EEEEE      Y    OOO   UUU  
