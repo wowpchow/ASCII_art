@@ -4,20 +4,22 @@
 
 # open access to ascii_alphabet.txt
 # note the dimenstions of each letter
-file = open("ascii_alphabet.txt")
-
+infile = open("ascii_alphabet.txt",'r')
+outfile = open("output.txt",'w')
 # enter the string you would like to print
 # yes it can handle whitespace too
 # will convert all characters to uppercase
-string = 'Mr Man is the best'
-string = string.upper()
+print('Enter the string to print: ')
+text = input()
+text = text.upper()
+temp = ""
 char_arr = []
 num_arr = []
 
 # convert the string input to a character array
 # see output for insight (char vs. string)
-for idx in string:
-    char_arr.append(idx)
+for idx in text:
+	char_arr.append(idx)
 print(char_arr)
 
 # convert each character to an ascii integer
@@ -27,21 +29,26 @@ print(char_arr)
 # B -> 66 (ASCII)
 # 66 - 65 -> 1 * 7 -> 7 ('B' begins at line 7)
 for idx in char_arr:
-    num_idx = (ord(idx)-65)*7
+	num_idx = (ord(idx)-65)*7
 # adjustment to handle whitespace ' ' with ascii 32
 # (32 - 65) * 7 = -231
 # add 413 to yield 182 which is the line where I specified the whitespace character to begin
-    if num_idx == -231:
-        num_idx = num_idx+413
-    num_arr.append(num_idx)
+	if num_idx == -231:
+		num_idx = num_idx+413
+	num_arr.append(num_idx)
 print(num_arr)
 print("\nPRINTING\n")
 
 # read each line from ascii_alphabet.txt into character array
 # print each character line by line (each character is 7 lines)
-line = file.read().splitlines()
+line = infile.read().splitlines()
 for layer in range(7):
-    for idx in num_arr:
-        print(line[idx], end=" ")
-    num_arr = [x+1 for x in num_arr]
-    print()
+	for idx in num_arr:
+		# print(line[idx], end=" ")
+		temp = temp + " " + line[idx]
+	num_arr = [x+1 for x in num_arr]
+	outfile.write(temp + "\n")
+	# print(temp)
+	temp = ""
+infile.close()
+outfile.close()
